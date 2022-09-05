@@ -15,7 +15,7 @@ const { RPCClient } = require("rpc-blackcoin");
 const url = "http://192.168.0.10";
 const user = "rpcuser";
 const pass = "rpcpassword";
-const port = 18832;
+const port = 15715;
 const timeout = 10000;
 const client = new RPCClient({ url, port, timeout, user, pass });
 ```
