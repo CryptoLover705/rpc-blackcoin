@@ -23,13 +23,13 @@ export class RESTClient extends RPC {
   /**
    * @param {object} [params]
    * @param {string} [params.url='http://localhost']
-   * @param {number} [params.port=8332]
+   * @param {number} [params.port=15715]
    * @param {number} [params.timeout=30000]
    * @param {...*} [params.options]
    */
   constructor({
     url = "http://localhost",
-    port = 8332,
+    port = 15715,
     timeout = 30000,
     ...options
   }: RESTIniOptions = {}) {
