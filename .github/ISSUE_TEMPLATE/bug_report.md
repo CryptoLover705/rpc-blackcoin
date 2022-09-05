@@ -13,7 +13,7 @@ A clear and concise description of what the bug is.
 Steps to reproduce the behavior (add some code):
 
 ```typescript
-import * as Bitcoin from "rpc-bitcoin";
+import * as Blackcoin from "rpc-blackcoin";
 // more code
 ```
 
@@ -24,7 +24,7 @@ A clear and concise description of what you expected to happen.
 
 - Node.js version: [e.g. 1.0.0]
 - NPM version: [e.g. 2.0.0]
-- Bitcoin Core version: [e.g. 0.18.1]
+- Blackcoin Core version: [e.g. 0.18.1]
 - Version [e.g. 1.1.1]
 
 **Additional context**

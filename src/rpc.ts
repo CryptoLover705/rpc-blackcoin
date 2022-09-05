@@ -410,7 +410,7 @@ export class RPCClient extends RESTClient {
 
   async rpc(method: string, params = {}, wallet?: string) {
     const uri = typeof wallet === "undefined" ? "/" : "wallet/" + wallet;
-    const body = { method, params, jsonrpc: 1.0, id: "rpc-bitcoin" };
+    const body = { method, params, jsonrpc: 1.0, id: "rpc-blackcoin" };
     try {
       const response = await this.batch(body, uri);
       return this.fullResponse ? response : response.result;
@@ -626,7 +626,7 @@ export class RPCClient extends RESTClient {
   }
 
   /**
-   * @description Stop Bitcoin server.
+   * @description Stop Blackcoin server.
    */
   stop() {
     return this.rpc("stop");
@@ -790,7 +790,7 @@ export class RPCClient extends RESTClient {
   }
 
   /**
-   * @description Combine multiple partially signed Bitcoin transactions into one transaction.
+   * @description Combine multiple partially signed Blackcoin transactions into one transaction.
    */
   combinepsbt(options: { txs: string[] }) {
     return this.rpc("combinepsbt", options);
@@ -825,7 +825,7 @@ export class RPCClient extends RESTClient {
   }
 
   /**
-   * @description Return a JSON object representing the serialized, base64-encoded partially signed Bitcoin transaction.
+   * @description Return a JSON object representing the serialized, base64-encoded partially signed Blackcoin transaction.
    */
   decodepsbt(options: { psbt: string }) {
     return this.rpc("decodepsbt", options);
@@ -937,7 +937,7 @@ export class RPCClient extends RESTClient {
   }
 
   /**
-   * @description Return information about the given bitcoin address.
+   * @description Return information about the given blackcoin address.
    */
   validateaddress(options: { address: string }) {
     return this.rpc("validateaddress", options);
@@ -1021,7 +1021,7 @@ export class RPCClient extends RESTClient {
   }
 
   /**
-   * @description Return information about the given bitcoin address.
+   * @description Return information about the given blackcoin address.
    */
   getaddressinfo(options: { address: string }, wallet?: string) {
     return this.rpc("getaddressinfo", options, wallet || this.wallet);
@@ -1042,14 +1042,14 @@ export class RPCClient extends RESTClient {
   }
 
   /**
-   * @description Returns a new Bitcoin address for receiving payments.
+   * @description Returns a new Blackcoin address for receiving payments.
    */
   getnewaddress(options: GetNewAddressParams, wallet?: string) {
     return this.rpc("getnewaddress", options, wallet || this.wallet);
   }
 
   /**
-   * @description Returns a new Bitcoin address, for receiving change.
+   * @description Returns a new Blackcoin address, for receiving change.
    */
   getrawchangeaddress(
     options: { address_type?: AddressType },

@@ -8,9 +8,9 @@ const pass = "rpcpassword";
 const auth = { user: "", pass };
 const uri = "http://localhost:" + port;
 const client = new RPCClient({ port, timeout, pass });
-const wallet = "bitcoin-core-wallet.dat";
+const wallet = "blackcoin-core-wallet.dat";
 
-const id = "rpc-bitcoin";
+const id = "rpc-blackcoin";
 const jsonrpc = 1.0;
 const error = null;
 
@@ -971,7 +971,7 @@ suite("RPCClient", () => {
       const params = { command: "getzmqnotifications" };
       const request = { params, method: "help", id, jsonrpc };
       const result =
-        'getzmqnotifications\n\nReturns information about the active ZeroMQ notifications.\n\nResult:\n[\n  {                        (json object)\n    "type": "pubhashtx",   (string) Type of notification\n    "address": "...",      (string) Address of the publisher\n    "hwm": n                 (numeric) Outbound message high water mark\n  },\n  ...\n]\n\nExamples:\n> bitcoin-cli getzmqnotifications \n> curl --user myusername --data-binary \'{"jsonrpc": "1.0", "id":"curltest", "method": "getzmqnotifications", "params": [] }\' -H \'content-type: text/plain;\' http://127.0.0.1:8332/\n';
+        'getzmqnotifications\n\nReturns information about the active ZeroMQ notifications.\n\nResult:\n[\n  {                        (json object)\n    "type": "pubhashtx",   (string) Type of notification\n    "address": "...",      (string) Address of the publisher\n    "hwm": n                 (numeric) Outbound message high water mark\n  },\n  ...\n]\n\nExamples:\n> blackcoin-cli getzmqnotifications \n> curl --user myusername --data-binary \'{"jsonrpc": "1.0", "id":"curltest", "method": "getzmqnotifications", "params": [] }\' -H \'content-type: text/plain;\' http://127.0.0.1:8332/\n';
       nock(uri)
         .post("/", request)
         .times(1)
@@ -1020,7 +1020,7 @@ suite("RPCClient", () => {
 
     test(".stop()", async () => {
       const request = { params: {}, method: "stop", id, jsonrpc };
-      const result = "Bitcoin server stopping";
+      const result = "Blackcoin server stopping";
       nock(uri)
         .post("/", request)
         .times(1)
@@ -2371,12 +2371,12 @@ suite("RPCClient", () => {
     });
 
     test(".createwallet()", async () => {
-      const wallet_name = "bitcoin-core-wallet.dat";
+      const wallet_name = "blackcoin-core-wallet.dat";
       const disable_private_keys = true;
       const blank = true;
       const params = { wallet_name, disable_private_keys, blank };
       const request = { params, method: "createwallet", id, jsonrpc };
-      const result = { name: "bitcoin-core-wallet.dat", warning: "" };
+      const result = { name: "blackcoin-core-wallet.dat", warning: "" };
       nock(uri)
         .post("/", request)
         .times(1)
@@ -2405,7 +2405,7 @@ suite("RPCClient", () => {
       const params = { filename };
       const request = { params, method: "dumpwallet", id, jsonrpc };
       const result = {
-        filename: "D:\\Wallets\\Bitcoin Core\\myWalletDump.dat",
+        filename: "D:\\Wallets\\Blackcoin Core\\myWalletDump.dat",
       };
       nock(uri)
         .post("/wallet/" + wallet, request)
@@ -2625,7 +2625,7 @@ suite("RPCClient", () => {
     test(".getwalletinfo()", async () => {
       const request = { params: {}, method: "getwalletinfo", id, jsonrpc };
       const result = {
-        walletname: "bitcoin-core-wallet.dat",
+        walletname: "blackcoin-core-wallet.dat",
         walletversion: 169900,
         balance: 0.0421393,
         unconfirmed_balance: 0,
@@ -3152,7 +3152,7 @@ suite("RPCClient", () => {
     test(".listwalletdir()", async () => {
       const request = { params: {}, method: "listwalletdir", id, jsonrpc };
       const result = {
-        wallets: [{ name: "bitcoin-core-wallet.dat" }, { name: "" }],
+        wallets: [{ name: "blackcoin-core-wallet.dat" }, { name: "" }],
       };
       nock(uri)
         .post("/", request)
@@ -3176,7 +3176,7 @@ suite("RPCClient", () => {
     });
 
     test(".loadwallet()", async () => {
-      const filename = "bitcoin-core-wallet.dat";
+      const filename = "blackcoin-core-wallet.dat";
       const params = { filename };
       const request = { params, method: "loadwallet", id, jsonrpc };
       const result = ["", "wallet123.dat"];

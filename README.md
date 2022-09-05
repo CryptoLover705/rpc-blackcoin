@@ -5,13 +5,13 @@ A [TypeScript](https://www.typescriptlang.org) library to make RPC and HTTP REST
 ## Installation
 
 ```bash
-npm install rpc-bitcoin
+npm install rpc-blackcoin
 ```
 
 ## [RPC](https://bitcoin.org/en/developer-reference#remote-procedure-calls-rpcs)
 
 ```javascript
-const { RPCClient } = require("rpc-bitcoin");
+const { RPCClient } = require("rpc-blackcoin");
 const url = "http://192.168.0.10";
 const user = "rpcuser";
 const pass = "rpcpassword";
